@@ -43,3 +43,5 @@ The Crowdfunding Database is created with a meticulous approach, ensuring its in
   3. **CSV Data Import**: The provided CSV files (`category.csv`, `subcategory.csv`, `campaigns.csv`, and `contacts.csv`) are essential for populating the database with meaningful data. Import each CSV file into its respective table within the `crowdfunding_db`.
 
   4. **SQL Queries and Analysis**: Leverage SQL queries to explore and analyze the data. For instance, using a `SELECT *` statement allows you to examine the contents of each table, facilitating insights and discoveries.
+
+  ![Entity-Relationship Diagram](./ERD.png)
