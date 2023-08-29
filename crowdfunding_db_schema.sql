@@ -2,32 +2,11 @@
 -- Link to schema: https://app.quickdatabasediagrams.com/#/d/ZTFkGo
 -- NOTE! If you have used non-SQL datatypes in your design, you will have to change these here.
 
-
-CREATE TABLE "campaign" (
-    "cf_id" INT   NOT NULL,
-    "contact_id" INT   NOT NULL,
-    "company_name" VARCHAR   NOT NULL,
-    "description" VARCHAR   NOT NULL,
-    "goal" BIGINT   NOT NULL,
-    "pledged" BIGINT   NOT NULL,
-    "outcome" VARCHAR(12)   NOT NULL,
-    "backers_count" INT   NOT NULL,
-    "country" VARCHAR(2)   NOT NULL,
-    "currency" VARCHAR(3)   NOT NULL,
-    "launched_date" DATE   NOT NULL,
-    "end_date" DATE   NOT NULL,
-    "category_id" VARCHAR(4)   NOT NULL,
-    "subcategory_id" VARCHAR(10)   NOT NULL,
-    CONSTRAINT "pk_campaign" PRIMARY KEY (
-        "cf_id"
-     )
-);
-
 CREATE TABLE "contacts" (
     "contact_id" INT   NOT NULL,
     "first_name" VARCHAR   NOT NULL,
     "last_name" VARCHAR   NOT NULL,
-    "email" VARCHAR   NOT NULL,
+    "email" VARCHAR,
     CONSTRAINT "pk_contacts" PRIMARY KEY (
         "contact_id"
      )
@@ -46,6 +25,27 @@ CREATE TABLE "subcategory" (
     "subcategory" VARCHAR   NOT NULL,
     CONSTRAINT "pk_subcategory" PRIMARY KEY (
         "subcategory_id"
+     )
+);
+
+
+CREATE TABLE "campaign" (
+    "cf_id" INT   NOT NULL,
+    "contact_id" INT   NOT NULL,
+    "company_name" VARCHAR   NOT NULL,
+    "description" VARCHAR   NOT NULL,
+    "goal"  NUMERIC  NOT NULL,
+    "pledged" NUMERIC  NOT NULL,
+    "outcome" VARCHAR(12)   NOT NULL,
+    "backers_count" INT   NOT NULL,
+    "country" VARCHAR(2)   NOT NULL,
+    "currency" VARCHAR(3)   NOT NULL,
+    "launched_date" DATE   NOT NULL,
+    "end_date" DATE   NOT NULL,
+    "category_id" VARCHAR(4)   NOT NULL,
+    "subcategory_id" VARCHAR(10)   NOT NULL,
+    CONSTRAINT "pk_campaign" PRIMARY KEY (
+        "cf_id"
      )
 );
 
